@@ -8,7 +8,6 @@ import java.util.Set;
 
 public class Club {
 
- 
     public Moniteur president;
 
     public String nom;
@@ -17,6 +16,9 @@ public class Club {
 
     public String telephone;
 
+    public Set<Licence> lesLicences = new HashSet<>();
+    public Set<Plongee> lesPlongees = new HashSet<>();
+
     public Club(Moniteur président, String nom, String telephone) {
         this.president = président;
         this.nom = nom;
@@ -24,26 +26,33 @@ public class Club {
     }
 
     /**
-     * Calcule l'ensemble des plongées non conformes organisées par ce club.
-     * Une plongée est conforme si tous les plongeurs de la palanquée ont une licence
-     * valide à la date de la plongée
+     * Calcule l'ensemble des plongées non conformes organisées par ce club. Une
+     * plongée est conforme si tous les plongeurs de la palanquée ont une
+     * licence valide à la date de la plongée
+     *
      * @return l'ensemble des plongées non conformes
      */
     public Set<Plongee> plongeesNonConformes() {
-         // TODO: Implémenter cette méthode
-        throw new UnsupportedOperationException("Pas encore implémenté");
+        // TODO: Implémenter cette méthode
+        Set<Plongee> plongeeNonConformes = new HashSet<>();
+        for (Plongee p : lesPlongees) {
+            if (p.estConforme() == false) {
+                plongeeNonConformes.add(p);
+            }
+        }
+        return plongeeNonConformes;
     }
 
     /**
      * Enregistre une nouvelle plongée organisée par ce club
+     *
      * @param p la nouvelle plongée
      */
     public void organisePlongee(Plongee p) {
-         // TODO: Implémenter cette méthode
-        throw new UnsupportedOperationException("Pas encore implémenté");
+        // TODO: Implémenter cette méthode
+        lesPlongees.add(p);
     }
-    
-    
+
     public Moniteur getPresident() {
         return president;
     }
