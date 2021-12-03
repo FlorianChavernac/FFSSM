@@ -58,8 +58,8 @@ public class ClubTest {
         club = new Club(p2, "Club de Plongee", "0647437547");
         delivrance = LocalDate.of(2021, Month.DECEMBER, 1);
         delivrance2 = LocalDate.of(2021, Month.NOVEMBER, 1);
-        p1.ajouterLicence("10", delivrance);
-        p2.ajouterLicence("11", delivrance2);
+        p1.ajouterLicence("10", delivrance, club);
+        p2.ajouterLicence("11", delivrance2, club);
         site = new Site("Argeles", "Pas de détails");
         plongee = new Plongee(site, p2, delivrance, 30, 2);
         plongee2 = new Plongee(site, p2, LocalDate.of(2022, Month.DECEMBER, 1), 30, 2);

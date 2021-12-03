@@ -32,10 +32,6 @@ public class Plongee {
         this.duree = duree;
     }
 
-    public Plongee(Moniteur chefDePalanquee) {
-        this.chefDePalanquee = chefDePalanquee;
-    }
-
     public void ajouteParticipant(Plongeur participant) {
         // TODO: Implémenter cette méthode
         lesParticipants.add(participant);
